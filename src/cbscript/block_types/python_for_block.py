@@ -15,8 +15,8 @@ class python_for_block(block_base):
 
 		try:
 			iter(set)
-		except:
-			raise CompileError(f'"{set}" in "for" block at line {self.line} is not an iterable set.')
+		except Exception as exc:
+			raise CompileError(f'"{set}" in "for" block at line {self.line} is not an iterable set.') from exc
 
 		for v in set:
 			if len(self.ids) == 1:

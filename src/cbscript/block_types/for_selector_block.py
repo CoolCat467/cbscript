@@ -28,12 +28,10 @@ class for_selector_block(block_base):
 
 		try:
 			exec_func.compile_blocks(self.sub)
-		except CompileError as e:
-			print(e)
-			raise CompileError(f'Unable to compile for block contents at line {self.line}')
-		except:
+		except Exception as exc:
+			print(exc)
 			print(traceback.format_exc())
-			raise CompileError(f'Unable to compile for block contents at line {self.line}')
+			raise CompileError(f'Unable to compile for block contents at line {self.line}') from exc
 
 		exec_func.add_command(f'scoreboard players set @s {scratch_id} 0')
 
