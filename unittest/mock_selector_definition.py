@@ -1,4 +1,4 @@
-class mock_selector_definition(object):
+class mock_selector_definition:
 	def __init__(self):
 		self.scores_min = {}
 		self.scores_max = {}
@@ -8,12 +8,12 @@ class mock_selector_definition(object):
 		self.is_single_entity = False
 		self.type = None
 		self.tag = ''
-		
+
 	def set_part(self, part, val):
 		self.parts[part] = val
-		
+
 	def single_entity(self):
 		return self.is_single_entity
-		
+
 	def get_type(self):
 		return self.type
