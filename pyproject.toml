@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools >= 64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["block_types", "data_types", "nbt_types", "scalar_expressions", "variable_types", "vector_expressions"]  # list of folders that contain the packages (["."] by default)
+include = ["*.py"]  # package names should match these glob patterns (["*"] by default)
+
+[project]
+name = "cbscript"
+version = "0.0.0"
+authors = [
+  { name="SethBling", email="sethbling@gmail.com" },
+]
+description = "CBScript for Minecraft"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = [
+    "ply",
+    "pyyaml",
+]
+
+[project.urls]
+"Source" = "https://github.com/SethBling/cbscript"
+"Bug Tracker" = "https://github.com/SethBling/cbscript/issues"
+
+[project.scripts]
+cbcompile = "compile:run"
